@@ -11,8 +11,8 @@
   DTS:LocaleID="10250"
   DTS:ObjectName="Dim_Cliente"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{A392258E-E187-4F28-AB7B-32135BC067BF}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{AB1253C9-5CC2-4843-B16A-0B88C843966C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -463,7 +463,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT_Cargar_Dim_Cliente\Extracción de la Tabla_Clientes">
+    design-time-name="Package\DFT_Cargar_Dim_Cliente\Dim_Cliente">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -471,7 +471,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT_Cargar_Dim_Cliente\Dim_Cliente">
+    design-time-name="Package\DFT_Cargar_Dim_Cliente\Extracción de la Tabla_Clientes">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
