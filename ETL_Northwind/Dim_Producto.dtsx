@@ -1,19 +1,462 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
-  DTS:CreationDate="7/7/2026 7:17:51 PM"
+  DTS:CreationDate="7/7/2026 7:22:57 PM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-9D06LP5"
   DTS:CreatorName="DESKTOP-9D06LP5\User"
-  DTS:DTSID="{3CBF4E57-3CB0-4CE0-AE71-6F798578652F}"
+  DTS:DTSID="{D356B024-2B4C-4A06-A98A-EE10A9934EBA}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="17.0.1016.0"
   DTS:LocaleID="10250"
-  DTS:ObjectName="Package1"
+  DTS:ObjectName="Dim_Producto"
   DTS:PackageType="5"
-  DTS:VersionGUID="{2F95ECEB-9253-4DF6-834C-3BB9D539E995}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{D0F5E056-C4A0-4EA0-827B-376E6CB53F0E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\DFT_Cargar_Productos"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{0595CF5E-2575-414B-A30C-12A2ECBBF200}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="DFT_Cargar_Productos">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\DFT_Cargar_Productos\Destino_DM_Producto"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Destino_DM_Producto"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."Dim_Producto"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Connections[IDbConnection]"
+                  connectionManagerID="{3F9B13A2-2C64-4145-8183-E52AEC3F3F63}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-9D06LP5.DM_Northwind]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET].Columns[Producto_Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="Producto_Nombre"
+                      externalMetadataColumnId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[Producto_Nombre]"
+                      lineageId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].Columns[Producto_Nombre]" />
+                    <inputColumn
+                      refId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET].Columns[FechaCarga]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="FechaCarga"
+                      externalMetadataColumnId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[FechaCarga]"
+                      lineageId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].Columns[FechaCarga]" />
+                    <inputColumn
+                      refId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET].Columns[ProductID]"
+                      cachedDataType="i4"
+                      cachedName="ProductID"
+                      externalMetadataColumnId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[Producto_ID]"
+                      lineageId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].Columns[ProductID]" />
+                    <inputColumn
+                      refId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET].Columns[Categoria_Nombre]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Categoria_Nombre"
+                      externalMetadataColumnId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[Producto_Categoria]"
+                      lineageId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].Columns[Categoria_Nombre]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[Producto_SKey]"
+                      dataType="i4"
+                      name="Producto_SKey" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[Producto_ID]"
+                      dataType="i4"
+                      name="Producto_ID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[Producto_Nombre]"
+                      dataType="wstr"
+                      length="40"
+                      name="Producto_Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[Producto_Categoria]"
+                      dataType="wstr"
+                      length="15"
+                      name="Producto_Categoria" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET].ExternalColumns[FechaCarga]"
+                      dataType="dbTimeStamp"
+                      name="FechaCarga" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
+              name="Fuente_DB_Productos"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la instrucción SQL utilizada por el componente para extraer datos."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT 
+    p.ProductID,
+    p.ProductName AS Producto_Nombre,
+    c.CategoryName AS Categoria_Nombre,
+    GETDATE() AS FechaCarga
+FROM Products p
+INNER JOIN Categories c ON p.CategoryID = c.CategoryID;</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si se debe permitir que columnas externas que no sean de cadenas se conviertan implícitamente en cadenas en las columnas de salida."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de origen."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especificar el modo de recuperar información de columnas externas"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Connections[IDbConnection]"
+                  connectionManagerID="{DB657168-56EB-425B-97A9-E7899C07A276}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-9D06LP5.Northwind]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET]"
+                  name="Salida de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].Columns[ProductID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].ExternalColumns[ProductID]"
+                      lineageId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].Columns[ProductID]"
+                      name="ProductID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].Columns[Producto_Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].ExternalColumns[Producto_Nombre]"
+                      length="40"
+                      lineageId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].Columns[Producto_Nombre]"
+                      name="Producto_Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].Columns[Categoria_Nombre]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].ExternalColumns[Categoria_Nombre]"
+                      length="15"
+                      lineageId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].Columns[Categoria_Nombre]"
+                      name="Categoria_Nombre"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].Columns[FechaCarga]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].ExternalColumns[FechaCarga]"
+                      lineageId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].Columns[FechaCarga]"
+                      name="FechaCarga"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].ExternalColumns[ProductID]"
+                      dataType="i4"
+                      name="ProductID" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].ExternalColumns[Producto_Nombre]"
+                      dataType="wstr"
+                      length="40"
+                      name="Producto_Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].ExternalColumns[Categoria_Nombre]"
+                      dataType="wstr"
+                      length="15"
+                      name="Categoria_Nombre" />
+                    <externalMetadataColumn
+                      refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET].ExternalColumns[FechaCarga]"
+                      dataType="dbTimeStamp"
+                      name="FechaCarga" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de error de origen de ADO NET]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de ADO NET">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de error de origen de ADO NET].Columns[ProductID]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de error de origen de ADO NET].Columns[ProductID]"
+                      name="ProductID" />
+                    <outputColumn
+                      refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de error de origen de ADO NET].Columns[Producto_Nombre]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de error de origen de ADO NET].Columns[Producto_Nombre]"
+                      name="Producto_Nombre" />
+                    <outputColumn
+                      refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de error de origen de ADO NET].Columns[Categoria_Nombre]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de error de origen de ADO NET].Columns[Categoria_Nombre]"
+                      name="Categoria_Nombre" />
+                    <outputColumn
+                      refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de error de origen de ADO NET].Columns[FechaCarga]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de error de origen de ADO NET].Columns[FechaCarga]"
+                      name="FechaCarga" />
+                    <outputColumn
+                      refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\DFT_Cargar_Productos.Paths[Salida de origen de ADO NET]"
+              endId="Package\DFT_Cargar_Productos\Destino_DM_Producto.Inputs[Entrada de destino de ADO NET]"
+              name="Salida de origen de ADO NET"
+              startId="Package\DFT_Cargar_Productos\Fuente_DB_Productos.Outputs[Salida de origen de ADO NET]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\SQL_Limpiar_DimProducto"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{71C96425-5D8A-4D99-BA9B-7539794C89C8}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SQL_Limpiar_DimProducto"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2025; © 2025 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3F9B13A2-2C64-4145-8183-E52AEC3F3F63}"
+          SQLTask:SqlStatementSource="&#xA;TRUNCATE TABLE dbo.Fact_Ventas;&#xA;DELETE FROM dbo.Dim_Producto;&#xA;DBCC CHECKIDENT ('dbo.Dim_Producto', RESEED, 0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{09C0898B-50F9-4E66-BAF2-6B4440359F80}"
+      DTS:From="Package\SQL_Limpiar_DimProducto"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\DFT_Cargar_Productos" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="196,42"
+          Id="Package\DFT_Cargar_Productos"
+          TopLeft="404.5,127.5" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\SQL_Limpiar_DimProducto"
+          TopLeft="392,18" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="500.5,60">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,67.5"
+              Start="0,0"
+              End="0,60">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,60" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\DFT_Cargar_Productos">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="190,42"
+          Id="Package\DFT_Cargar_Productos\Fuente_DB_Productos"
+          TopLeft="457,92" />
+        <NodeLayout
+          Size="190,42"
+          Id="Package\DFT_Cargar_Productos\Destino_DM_Producto"
+          TopLeft="454,262" />
+        <EdgeLayout
+          Id="Package\DFT_Cargar_Productos.Paths[Salida de origen de ADO NET]"
+          TopLeft="550.5,134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,128"
+              Start="0,0"
+              End="0,120.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,120.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Cargar_Productos\Fuente_DB_Productos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\DFT_Cargar_Productos\Destino_DM_Producto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

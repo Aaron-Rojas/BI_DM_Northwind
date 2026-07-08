@@ -11,8 +11,8 @@
   DTS:LocaleID="10250"
   DTS:ObjectName="Dim_Empleado"
   DTS:PackageType="5"
-  DTS:VersionBuild="15"
-  DTS:VersionGUID="{F69BA9B5-F1F8-4C70-B948-DCF3971EA1AF}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{1FC5C302-3787-4EF6-A409-493AB64A4D71}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -381,21 +381,21 @@ FROM Employees;</property>
         <NodeLayout
           Size="198,42"
           Id="Package\DFT_Cargar_Empleados\Destino_Dim_Empleado"
-          TopLeft="392,287" />
+          TopLeft="382,289" />
         <EdgeLayout
           Id="Package\DFT_Cargar_Empleados.Paths[Salida de origen de ADO NET]"
-          TopLeft="489,143">
+          TopLeft="484,143">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,144"
+              EndConnector="0,146"
               Start="0,0"
-              End="0,136.5">
+              End="0,138.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,136.5" />
+                    End="0,138.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
