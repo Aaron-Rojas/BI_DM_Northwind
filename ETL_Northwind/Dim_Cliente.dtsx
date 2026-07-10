@@ -11,19 +11,29 @@
   DTS:LocaleID="10250"
   DTS:ObjectName="Dim_Cliente"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{AB1253C9-5CC2-4843-B16A-0B88C843966C}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{72F69B30-7CFF-4F37-BAB2-6465863DF55A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[DESKTOP_9D06LP5.DM_Northwind]"
+      DTS:refId="Package.ConnectionManagers[DESKTOP-HU67BSQ.DM_Northwind]"
       DTS:CreationName="ADO.NET:Microsoft.Data.SqlClient.SqlConnection, Microsoft.Data.SqlClient, Version=5.0.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5"
       DTS:DTSID="{2B764BE2-C95C-4768-BFE7-8FADF04D63B0}"
-      DTS:ObjectName="DESKTOP_9D06LP5.DM_Northwind">
+      DTS:ObjectName="DESKTOP-HU67BSQ.DM_Northwind">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=DESKTOP-9D06LP5;Initial Catalog=DM_Northwind;Integrated Security=True;Trust Server Certificate=True;" />
+          DTS:ConnectionString="Data Source=.;Initial Catalog=DM_Northwind;Integrated Security=True;Trust Server Certificate=True;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-HU67BSQ.Northwind]"
+      DTS:CreationName="ADO.NET:Microsoft.Data.SqlClient.SqlConnection, Microsoft.Data.SqlClient, Version=5.0.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5"
+      DTS:DTSID="{3B45BC3E-319C-4FD1-9C8B-F8653737120C}"
+      DTS:ObjectName="DESKTOP-HU67BSQ.Northwind">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-HU67BSQ;Initial Catalog=Northwind;Integrated Security=True;Trust Server Certificate=True;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -79,8 +89,8 @@
               <connections>
                 <connection
                   refId="Package\DFT_Cargar_Dim_Cliente\Dim_Cliente.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[DESKTOP_9D06LP5.DM_Northwind]"
-                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP_9D06LP5.DM_Northwind]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-HU67BSQ.DM_Northwind]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-HU67BSQ.DM_Northwind]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -396,7 +406,7 @@
           Id="Package\DFT_Cargar_Dim_Cliente"
           TopLeft="293.5,162.5" />
         <NodeLayout
-          Size="209,42"
+          Size="209.333333333334,42"
           Id="Package\SQL_Limpiar_Dim_Cliente"
           TopLeft="295,33" />
         <EdgeLayout
@@ -434,7 +444,7 @@
           Id="Package\DFT_Cargar_Dim_Cliente\Extracción de la Tabla_Clientes"
           TopLeft="443,69" />
         <NodeLayout
-          Size="139,42"
+          Size="138.666666666667,42"
           Id="Package\DFT_Cargar_Dim_Cliente\Dim_Cliente"
           TopLeft="494,314" />
         <EdgeLayout

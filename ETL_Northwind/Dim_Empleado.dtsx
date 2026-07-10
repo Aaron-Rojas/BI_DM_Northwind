@@ -11,8 +11,8 @@
   DTS:LocaleID="10250"
   DTS:ObjectName="Dim_Empleado"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{1FC5C302-3787-4EF6-A409-493AB64A4D71}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{BE1680A2-8A63-4F99-8DF6-A2808A0BD16B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -67,8 +67,8 @@
               <connections>
                 <connection
                   refId="Package\DFT_Cargar_Empleados\Destino_Dim_Empleado.Connections[IDbConnection]"
-                  connectionManagerID="{3F9B13A2-2C64-4145-8183-E52AEC3F3F63}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-9D06LP5.DM_Northwind]"
+                  connectionManagerID="{066BF5EB-4654-4D4B-8E33-1C9FD9ACE71D}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-HU67BSQ.DM_Northwind 1]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -87,17 +87,17 @@
                       externalMetadataColumnId="Package\DFT_Cargar_Empleados\Destino_Dim_Empleado.Inputs[Entrada de destino de ADO NET].ExternalColumns[Empleado_NombreCompleto]"
                       lineageId="Package\DFT_Cargar_Empleados\Fuente_BD_Empleado.Outputs[Salida de origen de ADO NET].Columns[Empleado_NombreCompleto]" />
                     <inputColumn
-                      refId="Package\DFT_Cargar_Empleados\Destino_Dim_Empleado.Inputs[Entrada de destino de ADO NET].Columns[EmployeeID]"
-                      cachedDataType="i4"
-                      cachedName="EmployeeID"
-                      externalMetadataColumnId="Package\DFT_Cargar_Empleados\Destino_Dim_Empleado.Inputs[Entrada de destino de ADO NET].ExternalColumns[Empleado_ID]"
-                      lineageId="Package\DFT_Cargar_Empleados\Fuente_BD_Empleado.Outputs[Salida de origen de ADO NET].Columns[EmployeeID]" />
-                    <inputColumn
                       refId="Package\DFT_Cargar_Empleados\Destino_Dim_Empleado.Inputs[Entrada de destino de ADO NET].Columns[FechaCarga]"
                       cachedDataType="dbTimeStamp"
                       cachedName="FechaCarga"
                       externalMetadataColumnId="Package\DFT_Cargar_Empleados\Destino_Dim_Empleado.Inputs[Entrada de destino de ADO NET].ExternalColumns[FechaCarga]"
                       lineageId="Package\DFT_Cargar_Empleados\Fuente_BD_Empleado.Outputs[Salida de origen de ADO NET].Columns[FechaCarga]" />
+                    <inputColumn
+                      refId="Package\DFT_Cargar_Empleados\Destino_Dim_Empleado.Inputs[Entrada de destino de ADO NET].Columns[EmployeeID]"
+                      cachedDataType="i4"
+                      cachedName="EmployeeID"
+                      externalMetadataColumnId="Package\DFT_Cargar_Empleados\Destino_Dim_Empleado.Inputs[Entrada de destino de ADO NET].ExternalColumns[Empleado_ID]"
+                      lineageId="Package\DFT_Cargar_Empleados\Fuente_BD_Empleado.Outputs[Salida de origen de ADO NET].Columns[EmployeeID]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -309,8 +309,8 @@ FROM Employees;</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{3F9B13A2-2C64-4145-8183-E52AEC3F3F63}"
-          SQLTask:SqlStatementSource="&#xA;TRUNCATE TABLE dbo.Fact_Metas;&#xA;TRUNCATE TABLE dbo.Fact_Ventas;&#xA;&#xA;DELETE FROM dbo.Dim_Empleado;&#xA;&#xA;DBCC CHECKIDENT ('dbo.Dim_Empleado', RESEED, 0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:Connection="{066BF5EB-4654-4D4B-8E33-1C9FD9ACE71D}"
+          SQLTask:SqlStatementSource="&#xA;TRUNCATE TABLE dbo.Fact_Ventas;&#xA;&#xA;DELETE FROM dbo.Dim_Empleado;&#xA;&#xA;DBCC CHECKIDENT ('dbo.Dim_Empleado', RESEED, 0);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -337,11 +337,11 @@ FROM Employees;</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="201,42"
+          Size="201.333333333334,42"
           Id="Package\DFT_Cargar_Empleados"
           TopLeft="379.5,300.5" />
         <NodeLayout
-          Size="219,47"
+          Size="218.666666666667,46.6666666666667"
           Id="Package\SQL_Limpiar_DimEmpleado"
           TopLeft="364,174" />
         <EdgeLayout
