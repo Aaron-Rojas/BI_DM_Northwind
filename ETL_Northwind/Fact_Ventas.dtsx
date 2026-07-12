@@ -11,8 +11,8 @@
   DTS:LocaleID="10250"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{0931FC50-0B32-4FAC-A307-3546B27C6916}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{09A9F44A-1DC5-44A2-8E29-14DDD6A30B85}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1193,7 +1193,7 @@ INNER JOIN [Order Details] od ON o.OrderID = od.OrderID;</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
