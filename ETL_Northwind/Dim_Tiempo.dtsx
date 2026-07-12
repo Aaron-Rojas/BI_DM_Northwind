@@ -11,8 +11,8 @@
   DTS:LocaleID="10250"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{698A2009-D4BF-488F-9DAE-06685209329E}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{0A23F40F-F160-425B-B72C-FCA107B59BA9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -67,8 +67,8 @@
               <connections>
                 <connection
                   refId="Package\DFT_Cargar_Tiempo\Destino_Dim_Tiempo.Connections[IDbConnection]"
-                  connectionManagerID="{066BF5EB-4654-4D4B-8E33-1C9FD9ACE71D}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-HU67BSQ.DM_Northwind 1]"
+                  connectionManagerID="{FA5351FB-F11C-46FA-AE64-E18FA7AEF08E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-ITNF32HR.DM_Northwind]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -85,6 +85,12 @@
                       cachedName="Tiempo_SKey"
                       externalMetadataColumnId="Package\DFT_Cargar_Tiempo\Destino_Dim_Tiempo.Inputs[Entrada de destino de ADO NET].ExternalColumns[Tiempo_SKey]"
                       lineageId="Package\DFT_Cargar_Tiempo\Fuente_Propia_Tiempo.Outputs[Salida de origen de ADO NET].Columns[Tiempo_SKey]" />
+                    <inputColumn
+                      refId="Package\DFT_Cargar_Tiempo\Destino_Dim_Tiempo.Inputs[Entrada de destino de ADO NET].Columns[FechaCompleta]"
+                      cachedDataType="dbDate"
+                      cachedName="FechaCompleta"
+                      externalMetadataColumnId="Package\DFT_Cargar_Tiempo\Destino_Dim_Tiempo.Inputs[Entrada de destino de ADO NET].ExternalColumns[FechaCompleta]"
+                      lineageId="Package\DFT_Cargar_Tiempo\Fuente_Propia_Tiempo.Outputs[Salida de origen de ADO NET].Columns[FechaCompleta]" />
                     <inputColumn
                       refId="Package\DFT_Cargar_Tiempo\Destino_Dim_Tiempo.Inputs[Entrada de destino de ADO NET].Columns[Dia]"
                       cachedDataType="i4"
@@ -123,12 +129,6 @@
                       cachedName="Anio"
                       externalMetadataColumnId="Package\DFT_Cargar_Tiempo\Destino_Dim_Tiempo.Inputs[Entrada de destino de ADO NET].ExternalColumns[Anio]"
                       lineageId="Package\DFT_Cargar_Tiempo\Fuente_Propia_Tiempo.Outputs[Salida de origen de ADO NET].Columns[Anio]" />
-                    <inputColumn
-                      refId="Package\DFT_Cargar_Tiempo\Destino_Dim_Tiempo.Inputs[Entrada de destino de ADO NET].Columns[FechaCompleta]"
-                      cachedDataType="dbDate"
-                      cachedName="FechaCompleta"
-                      externalMetadataColumnId="Package\DFT_Cargar_Tiempo\Destino_Dim_Tiempo.Inputs[Entrada de destino de ADO NET].ExternalColumns[FechaCompleta]"
-                      lineageId="Package\DFT_Cargar_Tiempo\Fuente_Propia_Tiempo.Outputs[Salida de origen de ADO NET].Columns[FechaCompleta]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -254,8 +254,8 @@ OPTION (MAXRECURSION 0);</property>
               <connections>
                 <connection
                   refId="Package\DFT_Cargar_Tiempo\Fuente_Propia_Tiempo.Connections[IDbConnection]"
-                  connectionManagerID="{DB657168-56EB-425B-97A9-E7899C07A276}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-9D06LP5.Northwind]"
+                  connectionManagerID="{52C92964-C5C4-4D6F-B5E4-28062C20D018}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-ITNF32HR.Northwind]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -483,7 +483,7 @@ OPTION (MAXRECURSION 0);</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{066BF5EB-4654-4D4B-8E33-1C9FD9ACE71D}"
+          SQLTask:Connection="{FA5351FB-F11C-46FA-AE64-E18FA7AEF08E}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE dbo.Fact_Ventas;&#xA;&#xA;DELETE FROM dbo.Dim_Tiempo;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -511,7 +511,7 @@ OPTION (MAXRECURSION 0);</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="182.666666666667,42"
+          Size="183,42"
           Id="Package\DFT_Cargar_Tiempo"
           TopLeft="326.5,126.5" />
         <NodeLayout
@@ -549,27 +549,27 @@ OPTION (MAXRECURSION 0);</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="185.333333333334,42"
+          Size="185,42"
           Id="Package\DFT_Cargar_Tiempo\Destino_Dim_Tiempo"
-          TopLeft="422,337" />
+          TopLeft="424,229" />
         <NodeLayout
           Size="194,42"
           Id="Package\DFT_Cargar_Tiempo\Fuente_Propia_Tiempo"
           TopLeft="419.500000558794,117.263157924787" />
         <EdgeLayout
           Id="Package\DFT_Cargar_Tiempo.Paths[Salida de origen de ADO NET]"
-          TopLeft="515.58333361273,159.263157924787">
+          TopLeft="516.500000279397,159.263157924787">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,177.736842075213"
+              EndConnector="0,69.736842075213"
               Start="0,0"
-              End="0,170.236842075213">
+              End="0,62.236842075213">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,170.236842075213" />
+                    End="0,62.236842075213" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

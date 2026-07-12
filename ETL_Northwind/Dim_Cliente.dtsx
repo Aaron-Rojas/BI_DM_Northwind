@@ -11,8 +11,8 @@
   DTS:LocaleID="10250"
   DTS:ObjectName="Dim_Cliente"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{72F69B30-7CFF-4F37-BAB2-6465863DF55A}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{0C913CC0-781C-4650-A5F7-A0DCB4BA29F5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -229,8 +229,8 @@
               <connections>
                 <connection
                   refId="Package\DFT_Cargar_Dim_Cliente\Extracción de la Tabla_Clientes.Connections[IDbConnection]"
-                  connectionManagerID="{DB657168-56EB-425B-97A9-E7899C07A276}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[DESKTOP-9D06LP5.Northwind]"
+                  connectionManagerID="{52C92964-C5C4-4D6F-B5E4-28062C20D018}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[LAPTOP-ITNF32HR.Northwind]"
                   description="Administrador de conexiones administrado"
                   name="IDbConnection" />
               </connections>
@@ -374,7 +374,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{2B764BE2-C95C-4768-BFE7-8FADF04D63B0}"
+          SQLTask:Connection="{FA5351FB-F11C-46FA-AE64-E18FA7AEF08E}"
           SQLTask:SqlStatementSource="DELETE FROM Fact_Ventas;&#xA;DELETE FROM Dim_Cliente;&#xA;DBCC CHECKIDENT ('Dim_Cliente', RESEED, 0);&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -406,7 +406,7 @@
           Id="Package\DFT_Cargar_Dim_Cliente"
           TopLeft="293.5,162.5" />
         <NodeLayout
-          Size="209.333333333334,42"
+          Size="209,42"
           Id="Package\SQL_Limpiar_Dim_Cliente"
           TopLeft="295,33" />
         <EdgeLayout
@@ -444,7 +444,7 @@
           Id="Package\DFT_Cargar_Dim_Cliente\Extracción de la Tabla_Clientes"
           TopLeft="443,69" />
         <NodeLayout
-          Size="138.666666666667,42"
+          Size="139,42"
           Id="Package\DFT_Cargar_Dim_Cliente\Dim_Cliente"
           TopLeft="494,314" />
         <EdgeLayout
