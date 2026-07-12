@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{C9674DCB-5085-4A16-B785-4C70DD1589BD}") = "ETL_Northwind", "ETL_Northwind.dtproj", "{3C5294F5-47AA-4BFB-837C-CA105C83DB20}"
 EndProject
+Project("{D2ABAB84-BF74-430A-B69E-9DC6D40DDA17}") = "Cubos_Northwind", "..\Cubos_Northwind\Cubos_Northwind.dwproj", "{B10950B6-295C-4354-A64C-5CEE0771A055}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Development|Default = Development|Default
@@ -12,6 +14,9 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{3C5294F5-47AA-4BFB-837C-CA105C83DB20}.Development|Default.ActiveCfg = Development
 		{3C5294F5-47AA-4BFB-837C-CA105C83DB20}.Development|Default.Build.0 = Development
+		{B10950B6-295C-4354-A64C-5CEE0771A055}.Development|Default.ActiveCfg = Development
+		{B10950B6-295C-4354-A64C-5CEE0771A055}.Development|Default.Build.0 = Development
+		{B10950B6-295C-4354-A64C-5CEE0771A055}.Development|Default.Deploy.0 = Development
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
